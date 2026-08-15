@@ -1,0 +1,391 @@
+module	path	depends	version	summary
+account	odoo/addons/account	base_setup,onboarding,product,analytic,portal,digest	1.4	Invoices & Payments
+account_add_gln	odoo/addons/account_add_gln	account	1.0	This module adds the Global Location Number to the partner. Used on delivery addresses, it is used to identify stock locations and is mandatory on the UBL/CII eInvoices (but not only). The module is intended be merged with account, later on, in master
+account_check_printing	odoo/addons/account_check_printing	account	1.0	Check printing basic features
+account_debit_note	odoo/addons/account_debit_note	account	1.0	Debit Notes
+account_edi	odoo/addons/account_edi	account	1.0	Import/Export Invoices From XML/PDF
+account_edi_proxy_client	odoo/addons/account_edi_proxy_client	account,certificate	1.0	Proxy features for account_edi
+account_edi_ubl_cii	odoo/addons/account_edi_ubl_cii	account	1.0	Import/Export electronic invoices with UBL/CII
+account_fleet	odoo/addons/account_fleet	fleet,account	1.0	Manage accounting with fleets
+account_payment	odoo/addons/account_payment	account,payment	2.0	Enable customers to pay invoices on the portal and post payments when transactions are processed.
+account_payment_interco	odoo/addons/account_payment_interco	account_payment	1.0	Enable Intercompany payments to reconcile with their invoices on post.
+account_peppol	odoo/addons/account_peppol	account_edi_proxy_client,account_edi_ubl_cii	1.2	This module is used to send/receive documents with PEPPOL
+account_peppol_advanced_fields	odoo/addons/account_peppol_advanced_fields	account,account_edi_ubl_cii	1.0	Merged prematurly, not working correctly. Please don't use. Better solution coming soon.
+account_peppol_response	odoo/addons/account_peppol_response	account_peppol	1.0	This module is used to send/receive responses to documents received/sent with PEPPOL
+account_qr_code_emv	odoo/addons/account_qr_code_emv	account	1.0	account_qr_code_emv
+account_qr_code_sepa	odoo/addons/account_qr_code_sepa	account,base_iban	0.1	Account SEPA QR Code
+account_tax_python	odoo/addons/account_tax_python	account	1.0	Use python code to define taxes
+account_test	odoo/addons/account_test	account	1.0	Accounting Consistency Tests
+account_update_tax_tags	odoo/addons/account_update_tax_tags	account	1.0	Allow updating tax grids on existing entries
+analytic	odoo/addons/analytic	base,mail,uom	1.2	Analytic Accounting
+api_doc	odoo/addons/api_doc	web	1.0	API Documentation
+attachment_indexation	odoo/addons/attachment_indexation	web	2.1	Attachments List and Document Indexation
+auth_ldap	odoo/addons/auth_ldap	base,base_setup		Authentication via LDAP
+auth_oauth	odoo/addons/auth_oauth	base,web,base_setup,auth_signup		OAuth2 Authentication
+auth_passkey	odoo/addons/auth_passkey	base_setup,web	1.1	Log in with a Passkey
+auth_passkey_portal	odoo/addons/auth_passkey_portal	auth_passkey,portal	1.0	Passkeys for portal users
+auth_password_policy	odoo/addons/auth_password_policy	base_setup,web		Implement basic password policy configuration & check
+auth_password_policy_portal	odoo/addons/auth_password_policy_portal	auth_password_policy,portal		Password Policy support for Signup
+auth_password_policy_signup	odoo/addons/auth_password_policy_signup	auth_password_policy,auth_signup		Password Policy support for Signup
+auth_signup	odoo/addons/auth_signup	base_setup,mail,web	1.0	Signup
+auth_timeout	odoo/addons/auth_timeout	auth_totp,auth_totp_mail,auth_passkey,bus		Ask for authentication after user inactivity
+auth_totp	odoo/addons/auth_totp	web		Two-Factor Authentication (TOTP)
+auth_totp_mail	odoo/addons/auth_totp_mail	auth_totp,mail		2FA Invite mail
+auth_totp_portal	odoo/addons/auth_totp_portal	portal,auth_totp		TOTPortal
+barcodes	odoo/addons/barcodes	web	2.0	Scan and Parse Barcodes
+barcodes_gs1_nomenclature	odoo/addons/barcodes_gs1_nomenclature	barcodes,uom	1.0	Parse barcodes according to the GS1-128 specifications
+base	odoo/odoo/addons/base		1.3	Base
+base_address_extended	odoo/addons/base_address_extended	base,contacts	1.1	Add extra fields on addresses
+base_automation	odoo/addons/base_automation	base,digest,resource,mail,sms	1.0	Automation Rules
+base_geolocalize	odoo/addons/base_geolocalize	base_setup	2.1	Partners Geolocation
+base_iban	odoo/addons/base_iban	account,web		IBAN Bank Accounts
+base_import	odoo/addons/base_import	web	2.0	Base import
+base_import_module	odoo/addons/base_import_module	web		Base import module
+base_install_request	odoo/addons/base_install_request	mail		Base - Module Install Request
+base_setup	odoo/addons/base_setup	base,web	1.0	Initial Setup Tools
+base_sparse_field	odoo/addons/base_sparse_field	base	1.0	Implementation of sparse fields.
+base_vat	odoo/addons/base_vat	account	2.0	VAT Number Validation
+board	odoo/addons/board	spreadsheet_dashboard	1.0	Build your own dashboards
+bus	odoo/addons/bus	base,web	1.0	IM Bus
+calendar	odoo/addons/calendar	base,mail	1.1	Schedule employees' meetings
+calendar_sms	odoo/addons/calendar_sms	calendar,sms	1.1	Send text messages as event reminders
+certificate	odoo/addons/certificate	base_setup	0.1	Manage certificate
+cloud_storage	odoo/addons/cloud_storage	base_setup,mail	1.0	Store chatter attachments in the cloud
+cloud_storage_azure	odoo/addons/cloud_storage_azure	cloud_storage	1.0	Store chatter attachments in the Azure cloud
+cloud_storage_google	odoo/addons/cloud_storage_google	cloud_storage	1.0	Store chatter attachments in the Google cloud
+cloud_storage_migration	odoo/addons/cloud_storage_migration	cloud_storage	1.0	Migrate local attachments to cloud storage
+contacts	odoo/addons/contacts	base,mail		Centralize your address book
+crm	odoo/addons/crm	base_setup,sales_team,mail,calendar,resource,utm,web_tour,contacts,digest,phone_validation	1.9	Track leads and close opportunities
+crm_iap_enrich	odoo/addons/crm_iap_enrich	iap_crm,iap_mail	1.1	Enrich Leads/Opportunities using email address domain
+crm_iap_mine	odoo/addons/crm_iap_mine	iap_crm,iap_mail	1.2	Generate Leads/Opportunities based on country, industries, size, etc.
+crm_livechat	odoo/addons/crm_livechat	crm,im_livechat		Create lead from livechat conversation
+crm_mail_plugin	odoo/addons/crm_mail_plugin	crm,mail_plugin	1.0	Turn emails received in your mailbox into leads and log their content as internal notes.
+crm_sms	odoo/addons/crm_sms	crm,sms	1.1	Add SMS capabilities to CRM
+data_recycle	odoo/addons/data_recycle	mail	1.3	Find old records and archive/delete them
+delivery	odoo/addons/delivery	sale,payment_custom	1.0	Delivery Costs
+delivery_mondialrelay	odoo/addons/delivery_mondialrelay	stock_delivery	0.1	 Let's choose a Point Relais® as shipping address 
+delivery_stock_picking_batch	odoo/addons/delivery_stock_picking_batch	stock_delivery,stock_picking_batch	1.0	Batch Transfer, Carrier
+digest	odoo/addons/digest	mail,portal,resource	1.1	KPI Digests
+event	odoo/addons/event	barcodes,base_setup,mail,phone_validation,portal,utm	1.9	Trainings, Conferences, Meetings, Exhibitions, Registrations
+event_booth	odoo/addons/event_booth	event	1.1	Manage event booths
+event_booth_sale	odoo/addons/event_booth_sale	event_booth,event_sale	1.2	Manage event booths sale
+event_crm	odoo/addons/event_crm	event,crm	1.0	Event CRM
+event_crm_sale	odoo/addons/event_crm_sale	event_crm,event_sale	1.0	Event CRM Sale
+event_product	odoo/addons/event_product	event,product,account	1.0	Events Product
+event_sale	odoo/addons/event_sale	event_product,sale_management	1.3	Events Sales
+event_sms	odoo/addons/event_sms	event,sms	1.0	SMS on Events
+fleet	odoo/addons/fleet	base,mail	0.1	Manage your fleet and track car costs
+gamification	odoo/addons/gamification	mail	1.0	Gamification
+gamification_sale_crm	odoo/addons/gamification_sale_crm	gamification,sale_crm	1.0	CRM Gamification
+google_account	odoo/addons/google_account	base_setup		Google Users
+google_address_autocomplete	odoo/addons/google_address_autocomplete	web	1.0	Assist with automatic completion & suggestions when filling address
+google_calendar	odoo/addons/google_calendar	google_account,calendar	1.0	Google Calendar
+google_gmail	odoo/addons/google_gmail	mail	1.2	Google Gmail
+google_recaptcha	odoo/addons/google_recaptcha	base_setup	1.0	Google reCAPTCHA integration
+hr	odoo/addons/hr	base_setup,digest,phone_validation,resource_mail,web	1.1	Centralize employee information
+hr_attendance	odoo/addons/hr_attendance	hr,barcodes,base_geolocalize	2.0	Track employee attendance
+hr_calendar	odoo/addons/hr_calendar	hr,calendar	1.0	Display Working Hours in Calendar
+hr_expense	odoo/addons/hr_expense	account,web_tour,hr	2.1	Submit, validate and reinvoice employee expenses
+hr_fleet	odoo/addons/hr_fleet	hr,fleet	1.0	Get history of driven cars by employees
+hr_gamification	odoo/addons/hr_gamification	gamification,hr	1.0	HR Gamification
+hr_holidays	odoo/addons/hr_holidays	hr,calendar,resource	1.6	Allocate time off and follow leave requests
+hr_holidays_attendance	odoo/addons/hr_holidays_attendance	hr_attendance,hr_holidays	1.0	Attendance Holidays
+hr_holidays_homeworking	odoo/addons/hr_holidays_homeworking	hr_holidays,hr_homeworking		Manage holidays with remote work
+hr_homeworking	odoo/addons/hr_homeworking	hr	2.0	Remote Work
+hr_homeworking_calendar	odoo/addons/hr_homeworking_calendar	hr_homeworking,calendar	1.0	Remote Work with calendar
+hr_hourly_cost	odoo/addons/hr_hourly_cost	hr	1.0	Employee Hourly Wage
+hr_livechat	odoo/addons/hr_livechat	hr,im_livechat	1.0	HR - Livechat
+hr_maintenance	odoo/addons/hr_maintenance	hr,maintenance	1.0	Equipment, Assets, Internal Hardware, Allocation Tracking
+hr_org_chart	odoo/addons/hr_org_chart	hr,web_hierarchy	1.0	HR Org Chart
+hr_presence	odoo/addons/hr_presence	hr,hr_holidays,sms	1.0	Employee Presence Control
+hr_recruitment	odoo/addons/hr_recruitment	hr,calendar,utm,attachment_indexation,web_tour,digest	1.1	Track your recruitment pipeline
+hr_recruitment_skills	odoo/addons/hr_recruitment_skills	hr_skills,hr_recruitment	1.0	Manage skills of your employees
+hr_recruitment_sms	odoo/addons/hr_recruitment_sms	hr_recruitment,sms	1.0	Mass mailing sms to job applicants
+hr_recruitment_survey	odoo/addons/hr_recruitment_survey	survey,hr_recruitment	1.0	Surveys
+hr_skills	odoo/addons/hr_skills	hr	1.0	Manage skills, knowledge and resume of your employees
+hr_skills_event	odoo/addons/hr_skills_event	hr_skills,event	1.0	Link training events to resume of your employees
+hr_skills_slides	odoo/addons/hr_skills_slides	hr_skills,website_slides	1.0	Add completed courses to resume of your employees
+hr_skills_survey	odoo/addons/hr_skills_survey	hr_skills,survey	1.0	Add certification to resume of your employees
+hr_timesheet	odoo/addons/hr_timesheet	hr,hr_hourly_cost,analytic,project,uom	1.0	Track employee time on tasks
+hr_timesheet_attendance	odoo/addons/hr_timesheet_attendance	hr_timesheet,hr_attendance	1.1	Timesheets/attendances reporting
+hr_work_entry	odoo/addons/hr_work_entry	hr		Manage work entries
+hr_work_entry_holidays	odoo/addons/hr_work_entry_holidays	hr_holidays,hr_work_entry	1.0	Manage Time Off in Payslips
+html_builder	odoo/addons/html_builder	base,html_editor,mail	0.1	Generic html builder
+html_editor	odoo/addons/html_editor	base,bus,web	1.0	         A Html Editor component and plugin system     
+http_routing	odoo/addons/http_routing	web		Web Routing
+iap	odoo/addons/iap	web,base_setup	1.1	Basic models and helpers to support In-App purchases.
+iap_crm	odoo/addons/iap_crm	crm,iap_mail	1.0	Bridge between IAP and CRM
+iap_mail	odoo/addons/iap_mail	iap,mail	1.0	Bridge between IAP and mail
+im_livechat	odoo/addons/im_livechat	mail,rating,digest,utm	1.0	Chat with your website visitors
+iot_base	odoo/addons/iot_base	web	1.0	IoT Base
+iot_box_image	odoo/addons/iot_box_image			Build tools for the IoT Box image
+iot_drivers	odoo/addons/iot_drivers			Connect the Web Client to Hardware Peripherals
+link_tracker	odoo/addons/link_tracker	utm,mail	1.1	Link Tracker
+loyalty	odoo/addons/loyalty	product,portal,account	1.0	Use discounts, gift card, eWallets and loyalty programs in different sales channels
+lunch	odoo/addons/lunch	mail	1.0	Handle lunch orders of your employees
+mail	odoo/addons/mail	base,base_setup,bus,web_tour,html_editor	1.19	Chat, mail gateway and private channels
+mail_bot	odoo/addons/mail_bot	mail	1.2	Add OdooBot in discussions
+mail_bot_hr	odoo/addons/mail_bot_hr	mail_bot,hr	1.0	Bridge module between hr and mailbot.
+mail_group	odoo/addons/mail_group	mail,portal	1.1	Manage your mailing lists
+mail_plugin	odoo/addons/mail_plugin	web,contacts,iap	1.0	Allows integration with mail plugins.
+maintenance	odoo/addons/maintenance	mail	1.0	Track equipment and manage maintenance requests
+marketing_card	odoo/addons/marketing_card	link_tracker,mass_mailing,website	1.1	Generate dynamic shareable cards
+mass_mailing	odoo/addons/mass_mailing	contacts,mail,html_builder,utm,link_tracker,social_media,web_tour,digest	2.7	Design, send and track emails
+mass_mailing_crm	odoo/addons/mass_mailing_crm	crm,mass_mailing	1.0	Add lead / opportunities UTM info on mass mailing
+mass_mailing_crm_sms	odoo/addons/mass_mailing_crm_sms	mass_mailing_crm,mass_mailing_sms	1.0	Add lead / opportunities info on mass mailing sms
+mass_mailing_event	odoo/addons/mass_mailing_event	event,mass_mailing	1.0	Mass mailing on attendees
+mass_mailing_event_sms	odoo/addons/mass_mailing_event_sms	event,mass_mailing,mass_mailing_event,mass_mailing_sms,sms	1.0	Event Attendees SMS Marketing
+mass_mailing_event_track	odoo/addons/mass_mailing_event_track	website_event_track,mass_mailing	1.0	Mass mailing on track speakers
+mass_mailing_event_track_sms	odoo/addons/mass_mailing_event_track_sms	mass_mailing,mass_mailing_sms,sms,website_event_track	1.0	Track Speakers SMS Marketing
+mass_mailing_sale	odoo/addons/mass_mailing_sale	sale,mass_mailing	1.0	Add sale order UTM info on mass mailing
+mass_mailing_sale_sms	odoo/addons/mass_mailing_sale_sms	mass_mailing_sale,mass_mailing_sms	1.0	Add sale order info on mass mailing sms
+mass_mailing_slides	odoo/addons/mass_mailing_slides	website_slides,mass_mailing	1.0	Mass mailing on course members
+mass_mailing_sms	odoo/addons/mass_mailing_sms	portal,mass_mailing,sms	1.1	Design, send and track SMS
+mass_mailing_themes	odoo/addons/mass_mailing_themes	mass_mailing	1.2	Design gorgeous mails
+microsoft_account	odoo/addons/microsoft_account	base_setup		Microsoft Users
+microsoft_calendar	odoo/addons/microsoft_calendar	microsoft_account,calendar	1.0	Outlook Calendar
+microsoft_outlook	odoo/addons/microsoft_outlook	mail	1.1	Microsoft Outlook
+mrp	odoo/addons/mrp	product,stock,resource	2.0	Manufacturing Orders & BOMs
+mrp_account	odoo/addons/mrp_account	mrp,stock_account	1.0	Analytic accounting in Manufacturing
+mrp_landed_costs	odoo/addons/mrp_landed_costs	stock_landed_costs,mrp	1.0	Landed Costs on Manufacturing Order
+mrp_product_expiry	odoo/addons/mrp_product_expiry	mrp,product_expiry	1.0	Manufacturing Expiry
+mrp_repair	odoo/addons/mrp_repair	repair,mrp	1.0	Mrp Repairs
+mrp_subcontracting	odoo/addons/mrp_subcontracting	mrp	0.1	Subcontract Productions
+mrp_subcontracting_account	odoo/addons/mrp_subcontracting_account	mrp_subcontracting,mrp_account	0.1	Subcontracting Management with Stock Valuation
+mrp_subcontracting_dropshipping	odoo/addons/mrp_subcontracting_dropshipping	mrp_subcontracting,stock_dropshipping	0.1	Dropship and Subcontracting Management
+mrp_subcontracting_landed_costs	odoo/addons/mrp_subcontracting_landed_costs	stock_landed_costs,mrp_subcontracting	1.0	Advanced views to manage landed cost for subcontracting orders
+mrp_subcontracting_purchase	odoo/addons/mrp_subcontracting_purchase	mrp_subcontracting,purchase_mrp	0.1	Purchase and Subcontracting Management
+mrp_subcontracting_repair	odoo/addons/mrp_subcontracting_repair	mrp_subcontracting,repair	1.0	MRP Subcontracting Repair
+onboarding	odoo/addons/onboarding	web	1.2	Onboarding Toolbox
+partner_autocomplete	odoo/addons/partner_autocomplete	iap_mail	1.1	Auto-complete partner companies' data
+partnership	odoo/addons/partnership	crm,sale	1.0	Partnership / Membership
+payment	odoo/addons/payment	onboarding,portal	2.0	The payment engine used by payment provider modules.
+payment_adyen	odoo/addons/payment_adyen	payment	2.0	A Dutch payment provider covering Europe and the US.
+payment_aps	odoo/addons/payment_aps	payment	1.0	An Amazon payment provider covering the MENA region.
+payment_asiapay	odoo/addons/payment_asiapay	payment	1.0	An payment provider based in Hong Kong covering most Asian countries.
+payment_authorize	odoo/addons/payment_authorize	payment	2.0	An payment provider covering the US, Australia, and Canada.
+payment_buckaroo	odoo/addons/payment_buckaroo	payment	2.0	A Dutch payment provider covering several countries in Europe.
+payment_custom	odoo/addons/payment_custom	payment	2.0	A payment provider for custom flows like wire transfers.
+payment_demo	odoo/addons/payment_demo	payment	2.0	A payment provider for running fake payment flows for demo purposes.
+payment_dpo	odoo/addons/payment_dpo	payment		A Kenyan payment provider covering several African countries.
+payment_ecpay	odoo/addons/payment_ecpay	payment		A payment provider covering the Taiwanese market.
+payment_flutterwave	odoo/addons/payment_flutterwave	payment	1.0	A Nigerian payment provider covering several African countries.
+payment_iyzico	odoo/addons/payment_iyzico	payment		A payment provider covering Turkey.
+payment_mercado_pago	odoo/addons/payment_mercado_pago	payment	1.0	A payment provider covering several countries in Latin America.
+payment_mollie	odoo/addons/payment_mollie	payment	1.0	A Dutch payment provider covering several European countries.
+payment_nuvei	odoo/addons/payment_nuvei	payment		A payment provider covering Latin America.
+payment_paymob	odoo/addons/payment_paymob	payment	1.0	An Egyptian payment provider for the Middle East.
+payment_paypal	odoo/addons/payment_paypal	payment	2.0	An American payment provider for online payments all over the world.
+payment_payu	odoo/addons/payment_payu	payment		A payment provider covering India.
+payment_razorpay	odoo/addons/payment_razorpay	payment	1.0	A payment provider covering India.
+payment_redsys	odoo/addons/payment_redsys	payment		A payment provider covering the Spanish market.
+payment_stripe	odoo/addons/payment_stripe	payment	2.0	An Irish-American payment provider covering the US and many others.
+payment_toss_payments	odoo/addons/payment_toss_payments	payment		A payment provider covering the South Korea market
+payment_worldline	odoo/addons/payment_worldline	payment		A French payment provider covering several European countries.
+payment_xendit	odoo/addons/payment_xendit	payment	1.0	A payment provider for Indonesian and the Philippines.
+phone_validation	odoo/addons/phone_validation	base,mail	2.1	Validate and format phone numbers
+point_of_sale	odoo/addons/point_of_sale	resource,stock_account,barcodes,html_editor,digest,phone_validation,partner_autocomplete,iot_base,google_address_autocomplete	1.0.2	Handle checkouts and payments for shops and restaurants.
+portal	odoo/addons/portal	web,html_editor,http_routing,mail,auth_signup		Customer Portal
+portal_rating	odoo/addons/portal_rating	portal,rating	1.0	Portal Rating
+pos_account_tax_python	odoo/addons/pos_account_tax_python	account_tax_python,point_of_sale	1.0	Allow custom taxes in POS
+pos_adyen	odoo/addons/pos_adyen	point_of_sale	1.0	Integrate your POS with an Adyen payment terminal
+pos_cashdro	odoo/addons/pos_cashdro	point_of_sale		Integrate your POS with a Cashdro automatic cash payment device
+pos_cashmatic	odoo/addons/pos_cashmatic	point_of_sale		Integrate your POS with a cash matic automatic cash payment device
+pos_discount	odoo/addons/pos_discount	point_of_sale	1.0	Simple Discounts in the Point of Sale 
+pos_dpopay	odoo/addons/pos_dpopay	point_of_sale		Integrate your POS with DPO payment terminal.
+pos_edi_ubl	odoo/addons/pos_edi_ubl	point_of_sale,account_edi_ubl_cii	1.0	UBL in the Point of Sale 
+pos_event	odoo/addons/pos_event	point_of_sale,event_product	1.0	Link module between Point of Sale and Event
+pos_event_sale	odoo/addons/pos_event_sale	pos_event,pos_sale		Link module between pos_sale and pos_event
+pos_glory_cash	odoo/addons/pos_glory_cash	point_of_sale	1.0	Integrate your POS with a Glory automatic cash payment device
+pos_hr	odoo/addons/pos_hr	point_of_sale,hr		Link module between Point of Sale and HR
+pos_hr_restaurant	odoo/addons/pos_hr_restaurant	pos_hr,pos_restaurant	1.0	Link module between pos_hr and pos_restaurant
+pos_imin	odoo/addons/pos_imin	point_of_sale	1.0	iMin ePOS Printers in PoS
+pos_loyalty	odoo/addons/pos_loyalty	loyalty,point_of_sale	2.0	Use Coupons, Gift Cards and Loyalty programs in Point of Sale
+pos_mercado_pago	odoo/addons/pos_mercado_pago	point_of_sale	1.0	Integrate your POS with the Mercado Pago Smart Point terminal
+pos_mollie	odoo/addons/pos_mollie	point_of_sale,payment_mollie	1.0	Integrate your POS with a Mollie payment terminal
+pos_mrp	odoo/addons/pos_mrp	point_of_sale,mrp	1.0	Link module between Point of Sale and Mrp
+pos_online_payment	odoo/addons/pos_online_payment	point_of_sale,account_payment		Point of Sale online payment
+pos_online_payment_self_order	odoo/addons/pos_online_payment_self_order	pos_online_payment,pos_self_order	1.0	Support online payment in self-order
+pos_pine_labs	odoo/addons/pos_pine_labs	point_of_sale	1.0	Integrate your POS with Pine Labs payment terminals
+pos_qfpay	odoo/addons/pos_qfpay	point_of_sale	1.0	Integrate your POS with the QFPay terminal in Hong Kong
+pos_razorpay	odoo/addons/pos_razorpay	point_of_sale	1.0	Integrate your POS with a Razorpay payment terminal
+pos_repair	odoo/addons/pos_repair	point_of_sale,repair		Link module between Point of Sale and Repair
+pos_restaurant	odoo/addons/pos_restaurant	point_of_sale	1.0	Restaurant extensions for the Point of Sale 
+pos_restaurant_adyen	odoo/addons/pos_restaurant_adyen	pos_adyen,pos_restaurant,payment_adyen	1.0	Adds American style tipping to Adyen
+pos_restaurant_loyalty	odoo/addons/pos_restaurant_loyalty	pos_restaurant,pos_loyalty	1.0	Link module between pos_restaurant and pos_loyalty
+pos_restaurant_stripe	odoo/addons/pos_restaurant_stripe	pos_stripe,pos_restaurant,payment_stripe	1.0	Adds American style tipping to Stripe
+pos_safaricom	odoo/addons/pos_safaricom	point_of_sale	1.0	Integrate your POS with the Safaricom Payment Provider
+pos_sale	odoo/addons/pos_sale	point_of_sale,sale_management	1.1	Link module between Point of Sale and Sales
+pos_sale_loyalty	odoo/addons/pos_sale_loyalty	pos_sale,pos_loyalty	1.0	Link module between pos_sale and pos_loyalty
+pos_sale_margin	odoo/addons/pos_sale_margin	pos_sale,sale_margin	1.1	Link module between Point of Sale and Sales Margin
+pos_self_order	odoo/addons/pos_self_order	pos_restaurant,http_routing,link_tracker	1.0	Addon for the POS App that allows customers to view the menu on their smartphone.
+pos_self_order_adyen	odoo/addons/pos_self_order_adyen	pos_adyen,pos_self_order		Addon for the Self Order App that allows customers to pay by Adyen.
+pos_self_order_pine_labs	odoo/addons/pos_self_order_pine_labs	pos_pine_labs,pos_self_order	1.0	An addon for the Self Order App (KIOSK) that allows customers to pay using the Pine Labs POS Terminal.
+pos_self_order_qfpay	odoo/addons/pos_self_order_qfpay	pos_qfpay,pos_self_order		Addon for the Self Order App that allows customers to pay by QFPay.
+pos_self_order_razorpay	odoo/addons/pos_self_order_razorpay	pos_razorpay,pos_self_order	1.0	Addon for the Self Order App that allows customers to pay by Razorpay POS Terminal.
+pos_self_order_sale	odoo/addons/pos_self_order_sale	pos_sale,pos_self_order		POS Self Order Sale
+pos_self_order_stripe	odoo/addons/pos_self_order_stripe	pos_stripe,pos_self_order		Addon for the Self Order App that allows customers to pay by Stripe.
+pos_self_order_viva_com	odoo/addons/pos_self_order_viva_com	pos_viva_com,pos_self_order		Addon for the Self Order App that allows customers to pay with Viva.com terminals.
+pos_sms	odoo/addons/pos_sms	point_of_sale,sms		POS - SMS
+pos_stripe	odoo/addons/pos_stripe	point_of_sale,payment_stripe	1.0	Integrate your POS with a Stripe payment terminal
+pos_viva_com	odoo/addons/pos_viva_com	point_of_sale	1.0	Integrate your PoS with a Viva.com payment terminal
+privacy_lookup	odoo/addons/privacy_lookup	mail	1.0	Privacy
+product	odoo/addons/product	base,mail,uom	1.2	Products & Pricelists
+product_email_template	odoo/addons/product_email_template	account		Product Email Template
+product_expiry	odoo/addons/product_expiry	stock		Products Expiration Date
+product_margin	odoo/addons/product_margin	account		Margins by Products
+product_matrix	odoo/addons/product_matrix	account	1.0	Technical module: Matrix Implementation
+project	odoo/addons/project	analytic,base_setup,mail,portal,rating,resource,web,web_tour,digest	1.4	Organize and plan your projects
+project_account	odoo/addons/project_account	account,project		project profitability items computation
+project_hr_expense	odoo/addons/project_hr_expense	project_account,hr_expense	1.0	Project expenses
+project_hr_skills	odoo/addons/project_hr_skills	project,hr_skills	1.0	Project skills
+project_mail_plugin	odoo/addons/project_mail_plugin	project,mail_plugin	1.0	Integrate your inbox with projects
+project_mrp	odoo/addons/project_mrp	mrp,project	1.0	Monitor MRP using project
+project_mrp_account	odoo/addons/project_mrp_account	mrp_account,project_mrp	1.0	Monitor MRP account using project
+project_mrp_sale	odoo/addons/project_mrp_sale	project_mrp,sale_mrp,sale_project	1.0	Technical Bridge
+project_mrp_stock_landed_costs	odoo/addons/project_mrp_stock_landed_costs	project_mrp_account,mrp_landed_costs	1.0	Technical Bridge
+project_purchase	odoo/addons/project_purchase	purchase,project_account	1.0	Monitor purchase in project
+project_purchase_stock	odoo/addons/project_purchase_stock	project_purchase,project_stock	1.0	Project - Purchase - Stock
+project_sale_expense	odoo/addons/project_sale_expense	sale_project,sale_expense,project_hr_expense	1.0	Project - Sale - Expense
+project_sms	odoo/addons/project_sms	project,sms	1.1	Send text messages when project/task stage move
+project_stock	odoo/addons/project_stock	stock,project	1.0	Link Stock pickings to Project
+project_stock_account	odoo/addons/project_stock_account	stock_account,project_stock	1.0	Handle analytics in Stock pickings with Project
+project_stock_landed_costs	odoo/addons/project_stock_landed_costs	project_stock_account,stock_landed_costs	1.0	Technical Bridge
+project_timesheet_holidays	odoo/addons/project_timesheet_holidays	hr_timesheet,hr_holidays	1.0	Schedule timesheet when on time off
+project_todo	odoo/addons/project_todo	project	1.0	Organize your work with memos and to-do lists
+purchase	odoo/addons/purchase	account	1.2	Purchase orders, tenders and agreements
+purchase_edi_ubl_bis3	odoo/addons/purchase_edi_ubl_bis3	purchase,account_edi_ubl_cii	1.0	Import/Export electronic orders with UBL
+purchase_mrp	odoo/addons/purchase_mrp	mrp,purchase_stock	1.0	Purchase and MRP Management
+purchase_product_matrix	odoo/addons/purchase_product_matrix	purchase,product_matrix	1.0	Add variants to your purchase orders through an Order Grid Entry.
+purchase_repair	odoo/addons/purchase_repair	repair,purchase_stock	1.0	Keep track of linked purchase and repair orders
+purchase_requisition	odoo/addons/purchase_requisition	purchase	0.1	Purchase Agreements
+purchase_requisition_sale	odoo/addons/purchase_requisition_sale	purchase_requisition,sale_purchase	1.0	Purchase Requisition Sale
+purchase_requisition_stock	odoo/addons/purchase_requisition_stock	purchase_requisition,purchase_stock	1.2	Purchase Requisition Stock
+purchase_stock	odoo/addons/purchase_stock	stock_account,purchase	1.2	Purchase Orders, Receipts, Vendor Bills for Stock
+rating	odoo/addons/rating	mail	1.1	Customer Rating
+repair	odoo/addons/repair	sale_stock,sale_management	1.0	Repair damaged products
+resource	odoo/addons/resource	base,web	1.1	Resource
+resource_mail	odoo/addons/resource_mail	resource,mail	1.0	Resource Mail
+rpc	odoo/addons/rpc	base		RPC endpoints
+sale	odoo/addons/sale	sales_team,account_payment,utm	1.2	Sales internal machinery
+sale_crm	odoo/addons/sale_crm	sale,crm	1.0	Opportunity to Quotation
+sale_edi_ubl	odoo/addons/sale_edi_ubl	sale,account_edi_ubl_cii	1.0	Import electronic orders with UBL
+sale_expense	odoo/addons/sale_expense	sale_management,hr_expense	1.0	Quotation, Sales Orders, Delivery & Invoicing Control
+sale_expense_margin	odoo/addons/sale_expense_margin	sale_expense,sale_margin	1.0	Sales Expense Margin
+sale_gelato	odoo/addons/sale_gelato	sale,delivery		Place orders through Gelato's print-on-demand service
+sale_gelato_stock	odoo/addons/sale_gelato_stock	sale_gelato,sale_stock		Gelato/Stock bridge
+sale_loyalty	odoo/addons/sale_loyalty	sale,loyalty	1.0	Use discounts and loyalty programs in sales orders
+sale_loyalty_delivery	odoo/addons/sale_loyalty_delivery	sale_loyalty,delivery		Adds free shipping mechanism in sales orders
+sale_management	odoo/addons/sale_management	sale,digest	1.0	From quotations to invoices
+sale_margin	odoo/addons/sale_margin	sale_management	1.0	Margins in Sales Orders
+sale_mrp	odoo/addons/sale_mrp	mrp,sale_stock	1.0	Sales and MRP Management
+sale_mrp_margin	odoo/addons/sale_mrp_margin	sale_mrp,sale_stock_margin	0.1	Sale Mrp Margin
+sale_pdf_quote_builder	odoo/addons/sale_pdf_quote_builder	sale_management		Sales PDF Quotation Builder
+sale_product_matrix	odoo/addons/sale_product_matrix	sale,product_matrix	1.0	Add variants to Sales Order through a grid entry.
+sale_project	odoo/addons/sale_project	sale_management,sale_service,project_account		Task Generation from Sales Orders
+sale_project_stock	odoo/addons/sale_project_stock	sale_project,sale_stock,project_stock_account	1.0	Adds a full traceability of inventory operations on the profitability report.
+sale_project_stock_account	odoo/addons/sale_project_stock_account	sale_project,project_stock_account	1.0	Technical Bridge
+sale_purchase	odoo/addons/sale_purchase	sale,purchase	1.0	Sale based on service outsourcing.
+sale_purchase_project	odoo/addons/sale_purchase_project	sale_purchase,project_purchase,sale_project	1.0	Technical Bridge
+sale_purchase_stock	odoo/addons/sale_purchase_stock	sale_stock,purchase_stock,sale_purchase	1.0	SO/PO relation in case of MTO
+sale_service	odoo/addons/sale_service	sale_management		Interaction between Sales and services apps (project and planning)
+sale_sms	odoo/addons/sale_sms	sale,sms	1.0	Ease SMS integration with sales capabilities
+sale_stock	odoo/addons/sale_stock	sale,stock_account	1.0	Quotation, Sales Orders, Delivery & Invoicing Control
+sale_stock_margin	odoo/addons/sale_stock_margin	sale_stock,sale_margin	0.1	Sale Stock Margin
+sale_stock_product_expiry	odoo/addons/sale_stock_product_expiry	sale_stock,product_expiry	0.1	Sale Stock Product Expiry
+sale_timesheet	odoo/addons/sale_timesheet	sale_project,hr_timesheet		Sell based on timesheets
+sale_timesheet_margin	odoo/addons/sale_timesheet_margin	sale_margin,sale_timesheet	1.0	Bridge module between Sales Margin and Sales Timesheet
+sales_team	odoo/addons/sales_team	base,mail	1.1	Sales Teams
+sms	odoo/addons/sms	base,iap_mail,mail,phone_validation	3.0	SMS Text Messaging
+sms_twilio	odoo/addons/sms_twilio	sms	1.0	Send SMS messages using Twilio
+snailmail	odoo/addons/snailmail	iap_mail,mail	0.4	Snail Mail
+snailmail_account	odoo/addons/snailmail_account	account,snailmail	0.1	Snail Mail - Account
+social_media	odoo/addons/social_media	base	0.1	Social media connectors for company settings.
+spreadsheet	odoo/addons/spreadsheet	bus,web,portal	1.0	Spreadsheet
+spreadsheet_account	odoo/addons/spreadsheet_account	spreadsheet,account	1.0	Spreadsheet Accounting formulas
+spreadsheet_dashboard	odoo/addons/spreadsheet_dashboard	spreadsheet	1.0	Spreadsheet
+spreadsheet_dashboard_account	odoo/addons/spreadsheet_dashboard_account	spreadsheet_dashboard,account	1.0	Spreadsheet
+spreadsheet_dashboard_event_sale	odoo/addons/spreadsheet_dashboard_event_sale	spreadsheet_dashboard,event_sale	1.0	Spreadsheet
+spreadsheet_dashboard_hr_expense	odoo/addons/spreadsheet_dashboard_hr_expense	spreadsheet_dashboard,sale_expense	1.0	Spreadsheet
+spreadsheet_dashboard_hr_timesheet	odoo/addons/spreadsheet_dashboard_hr_timesheet	spreadsheet_dashboard,hr_timesheet	1.0	Spreadsheet
+spreadsheet_dashboard_im_livechat	odoo/addons/spreadsheet_dashboard_im_livechat	spreadsheet_dashboard,im_livechat	1.0	Spreadsheet
+spreadsheet_dashboard_pos_hr	odoo/addons/spreadsheet_dashboard_pos_hr	spreadsheet_dashboard,pos_hr	1.0	Spreadsheet
+spreadsheet_dashboard_pos_restaurant	odoo/addons/spreadsheet_dashboard_pos_restaurant	spreadsheet_dashboard,pos_hr,pos_restaurant	1.0	Spreadsheet
+spreadsheet_dashboard_sale	odoo/addons/spreadsheet_dashboard_sale	spreadsheet_dashboard,sale	1.0	Spreadsheet
+spreadsheet_dashboard_sale_timesheet	odoo/addons/spreadsheet_dashboard_sale_timesheet	spreadsheet_dashboard,sale_timesheet	1.0	Spreadsheet
+spreadsheet_dashboard_stock_account	odoo/addons/spreadsheet_dashboard_stock_account	spreadsheet_dashboard,stock_account		Spreadsheet
+spreadsheet_dashboard_website_sale	odoo/addons/spreadsheet_dashboard_website_sale	spreadsheet_dashboard,website_sale	1.0	Spreadsheet
+spreadsheet_dashboard_website_sale_slides	odoo/addons/spreadsheet_dashboard_website_sale_slides	spreadsheet_dashboard,website_sale_slides	1.0	Spreadsheet
+stock	odoo/addons/stock	product,barcodes_gs1_nomenclature,digest	1.1	Manage your stock and logistics activities
+stock_account	odoo/addons/stock_account	stock,account	1.1	Inventory, Logistic, Valuation, Accounting
+stock_delivery	odoo/addons/stock_delivery	sale_stock,delivery	1.0	Delivery - Stock
+stock_dropshipping	odoo/addons/stock_dropshipping	sale_purchase_stock	1.0	Drop Shipping
+stock_fleet	odoo/addons/stock_fleet	stock_picking_batch,fleet	1.0	Stock Transport: Dispatch Management System
+stock_landed_costs	odoo/addons/stock_landed_costs	stock_account,purchase_stock	1.1	Landed Costs
+stock_maintenance	odoo/addons/stock_maintenance	stock,maintenance	1.0	See lots used in maintenance
+stock_picking_batch	odoo/addons/stock_picking_batch	stock	1.0	Warehouse Management: Batch Transfer
+stock_sms	odoo/addons/stock_sms	stock,sms	1.0	Send text messages when final stock move
+survey	odoo/addons/survey	auth_signup,http_routing,mail,web_tour,gamification	3.7	Send your surveys or share them live.
+survey_crm	odoo/addons/survey_crm	survey,crm	1.0	Generate leads from surveys
+transifex	odoo/addons/transifex	base,web	1.0	Add a link to edit a translation in Transifex
+uom	odoo/addons/uom	base	1.0	Units of measure
+utm	odoo/addons/utm	base,web	1.1	UTM Trackers
+web	odoo/addons/web	base	1.0	Web
+web_hierarchy	odoo/addons/web_hierarchy	web	1.0	Web Hierarchy
+web_tour	odoo/addons/web_tour	web	1.0	Tours
+web_unsplash	odoo/addons/web_unsplash	base_setup,html_editor	1.1	Find free high-resolution images from Unsplash
+website	odoo/addons/website	digest,web,html_editor,http_routing,portal,social_media,auth_signup,mail,google_recaptcha,utm,html_builder	1.0	Enterprise website builder
+website_blog	odoo/addons/website_blog	website_mail,website_partner,html_builder	1.1	Publish blog posts, announces, news
+website_cf_turnstile	odoo/addons/website_cf_turnstile	website	1.0	Cloudflare Turnstile
+website_crm	odoo/addons/website_crm	website,crm	2.1	Generate leads from a contact form
+website_crm_iap_reveal	odoo/addons/website_crm_iap_reveal	iap_crm,iap_mail,crm_iap_mine,website_crm	1.1	Generate Leads/Opportunities from your website's traffic
+website_crm_livechat	odoo/addons/website_crm_livechat	website_crm,website_livechat	1.0	View livechat sessions for leads
+website_crm_partner_assign	odoo/addons/website_crm_partner_assign	base_geolocalize,crm,account,partnership,website_partner,website_google_map,portal	1.2	Publish your resellers/partners and forward leads to them
+website_crm_sms	odoo/addons/website_crm_sms	website_sms,crm	1.0	Allows to send sms to website visitor that have lead
+website_customer	odoo/addons/website_customer	website_crm_partner_assign,website_partner,website_google_map	1.0	Publish your customer references
+website_event	odoo/addons/website_event	event,website,website_partner,website_mail,html_builder	1.4	Publish events, sell tickets
+website_event_booth	odoo/addons/website_event_booth	website_event,event_booth	1.0	Events, display your booths on your website
+website_event_booth_exhibitor	odoo/addons/website_event_booth_exhibitor	website_event_exhibitor,website_event_booth	1.1	Event Booths, automatically create a sponsor.
+website_event_booth_sale	odoo/addons/website_event_booth_sale	event_booth_sale,website_event_booth,website_sale	1.0	Events, sell your booths online
+website_event_booth_sale_exhibitor	odoo/addons/website_event_booth_sale_exhibitor	website_event_exhibitor,website_event_booth_sale	1.0	Bridge module between website_event_booth_exhibitor and website_event_booth_sale.
+website_event_crm	odoo/addons/website_event_crm	event_crm,website_event	1.0	Website Events CRM
+website_event_exhibitor	odoo/addons/website_event_exhibitor	website_event	1.1	Event: manage sponsors and exhibitors
+website_event_sale	odoo/addons/website_event_sale	website_event,event_sale,website_sale		Sell event tickets online
+website_event_track	odoo/addons/website_event_track	website_event	1.3	Sponsors, Tracks, Agenda, Event News
+website_event_track_live	odoo/addons/website_event_track_live	website_event_track	1.0	Support live tracks: streaming, participation, youtube
+website_event_track_live_quiz	odoo/addons/website_event_track_live_quiz	website_event_track_live,website_event_track_quiz	1.0	"Bridge module to support quiz features during ""live"" tracks. "
+website_event_track_quiz	odoo/addons/website_event_track_quiz	website_profile,website_event_track	1.0	Quizzes on tracks
+website_forum	odoo/addons/website_forum	auth_signup,website_mail,website_profile	1.2	Manage a forum with FAQ and Q&A
+website_google_map	odoo/addons/website_google_map	base_geolocalize,website_partner	1.0	Show your company address on Google Maps
+website_hr_recruitment	odoo/addons/website_hr_recruitment	hr_recruitment,website_mail	1.1	Manage your online hiring process
+website_hr_recruitment_livechat	odoo/addons/website_hr_recruitment_livechat	website_hr_recruitment,im_livechat	1.0	Chatbot for the HR Recruitment
+website_links	odoo/addons/website_links	website,link_tracker	1.0	Generate trackable & short URLs
+website_livechat	odoo/addons/website_livechat	website,im_livechat	1.0	Chat with your website visitors
+website_mail	odoo/addons/website_mail	website,mail	0.1	Website Module for Mail
+website_mail_group	odoo/addons/website_mail_group	mail_group,website	1.0	Add a website snippet for the mail groups.
+website_mass_mailing	odoo/addons/website_mass_mailing	website,mass_mailing,google_recaptcha	1.0	Attract visitors to subscribe to mailing lists
+website_mass_mailing_sms	odoo/addons/website_mass_mailing_sms	website_mass_mailing,mass_mailing_sms	1.0	Attract visitors to subscribe to mailing lists
+website_partner	odoo/addons/website_partner	website	0.1	Partner module for website
+website_payment	odoo/addons/website_payment	website,account_payment,portal	1.0	Payment integration with website
+website_profile	odoo/addons/website_profile	html_editor,website_partner,gamification	1.0	Access the website profile of the users
+website_project	odoo/addons/website_project	website,project	1.0	Add a task suggestion form to your website
+website_sale	odoo/addons/website_sale	website,sale,website_payment,website_mail,portal_rating,digest,delivery,html_builder	1.1	Sell your products online
+website_sale_autocomplete	odoo/addons/website_sale_autocomplete	website_sale,google_address_autocomplete	1.0	Assist your users with automatic completion & suggestions when filling their address during checkout
+website_sale_collect	odoo/addons/website_sale_collect	base_geolocalize,payment_custom,website_sale_stock	1.0	Click & Collect
+website_sale_collect_wishlist	odoo/addons/website_sale_collect_wishlist	website_sale_wishlist,website_sale_collect		Bridge module between Click & Collect and Wishlist
+website_sale_comparison	odoo/addons/website_sale_comparison	website_sale	1.0	Allow shoppers to compare products based on their attributes
+website_sale_comparison_wishlist	odoo/addons/website_sale_comparison_wishlist	website_sale_comparison,website_sale_wishlist		Bridge module for Website sale comparison and wishlist
+website_sale_gelato	odoo/addons/website_sale_gelato	sale_gelato,website_sale		eCommerce/Gelato bridge
+website_sale_loyalty	odoo/addons/website_sale_loyalty	website_sale,website_links,sale_loyalty	1.0	Use coupon, promotion, gift cards and loyalty programs in your eCommerce store
+website_sale_mass_mailing	odoo/addons/website_sale_mass_mailing	website_sale,website_mass_mailing	1.0	Let new customers sign up for a newsletter during checkout
+website_sale_mondialrelay	odoo/addons/website_sale_mondialrelay	website_sale,delivery_mondialrelay	0.1	Let's choose Point Relais® on your ecommerce
+website_sale_mrp	odoo/addons/website_sale_mrp	website_sale_stock,sale_mrp	1.0	Manage Kit product inventory & availability
+website_sale_slides	odoo/addons/website_sale_slides	website_slides,website_sale	1.0	Sell your courses online
+website_sale_stock	odoo/addons/website_sale_stock	website_sale,sale_stock,stock_delivery		Manage product inventory & availability
+website_sale_stock_wishlist	odoo/addons/website_sale_stock_wishlist	website_sale_stock,website_sale_wishlist		Notify the user when a product is back in stock
+website_sale_wishlist	odoo/addons/website_sale_wishlist	website_sale	1.0	Allow shoppers to enlist products
+website_slides	odoo/addons/website_slides	portal_rating,website,website_mail,website_profile	2.7	Manage and publish an eLearning platform
+website_slides_forum	odoo/addons/website_slides_forum	website_slides,website_forum	1.0	Allows to link forum on a course
+website_slides_survey	odoo/addons/website_slides_survey	website_slides,survey	1.0	Add certification capabilities to your courses
+website_sms	odoo/addons/website_sms	website,sms	1.0	Allows to send sms to website visitor
+website_timesheet	odoo/addons/website_timesheet	website,hr_timesheet	1.0	Allow hiding timesheet information in the portal

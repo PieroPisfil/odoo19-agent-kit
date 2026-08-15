@@ -1,0 +1,28 @@
+# Odoo source: checkout de solo lectura (odoo/odoo rama 19.0), es referencia,
+# no codigo propio. Es su propio repo git y no se versiona aqui.
+/odoo-src/
+
+# Addons: este repo es la plantilla del entorno Docker. El codigo de los
+# modulos vive en sus propios repos (p.ej. addons/ ya apunta a otro remoto).
+# Para un proyecto nuevo, estas carpetas arrancan vacias.
+/addons/
+/addons-third-party/
+/restore_files/
+
+# Legacy Odoo 17 (version anterior, no forma parte de este proyecto)
+/odoo17addons-master/
+
+# Entorno local / secretos - cada quien crea el suyo a partir del .example
+.env
+config/odoo.conf
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Editor / SO
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

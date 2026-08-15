@@ -1,0 +1,13 @@
+---
+description: Odoo 19 workspace map — write custom modules in addons/, treat odoo-src/ as read-only
+alwaysApply: true
+---
+
+# Odoo 19 workspace
+
+- Write modules only in `addons/`. Never edit `odoo-src/`. Do not put project modules in `addons-third-party/`.
+- Inherit native models/views (`_inherit`, `inherit_id` + xpath). Do not copy addon trees.
+- Before coding, run `python .cursor/skills/odoo-custom-module/scripts/find_model.py <model>` and read that class only.
+- Do not `@` folders under `odoo-src/addons`. Use Grep or `find_model.py`. Catalog `FILE` paths may start with `odoo/`; open them under `odoo-src/`.
+- Manifest version prefix: `19.0`. View mode: `list,form` (not `tree`).
+- `--addons-path` (clone lookup): `odoo-src/addons` and `odoo-src/odoo/addons`. Runtime: `scripts/up.ps1` → http://localhost:8070 (service `odoo19_1`, DB `dev`). `addons/` → `/mnt/extra-addons`.

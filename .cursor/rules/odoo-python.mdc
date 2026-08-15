@@ -1,0 +1,33 @@
+---
+description: Odoo 19 Python ORM conventions for custom modules
+globs: custom_addons/**/*.py
+alwaysApply: false
+---
+
+# Odoo 19 Python
+
+```python
+# ❌ BAD — copy or patch core
+# (editing odoo/addons/sale/models/sale_order.py)
+
+# ✅ GOOD — extend in custom_addons
+from odoo import api, fields, models
+
+class SaleOrder(models.Model):
+    _inherit = "sale.order"
+
+    warranty_days = fields.Integer(default=30)
+
+    @api.depends("warranty_days")
+    def _compute_warranty(self):
+        for order in self:
+            order.warranty_days = order.warranty_days or 30
+
+    @api.model_create_multi
+    def create(self, vals_list):
+        return super().create(vals_list)
+```
+
+- New model: `_name` + `_description`. Extend existing: `_inherit` only (no `_name`).
+- Call `super()` on overrides. Use `@api.depends` / `@api.constrains` as native modules do.
+- After `find_model.py`, copy field/method style from that class — not from memory of older Odoo versions.

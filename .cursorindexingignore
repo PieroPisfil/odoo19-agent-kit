@@ -1,0 +1,12 @@
+# Translations and screenshots — huge, almost never useful as inheritance patterns
+odoo/**/i18n/
+odoo/**/*.po
+odoo/**/*.pot
+odoo/**/static/description/
+odoo/**/static/img/
+
+# Localization, themes, IoT drivers, upstream tests — keep readable, drop from search index
+odoo/**/addons/l10n_*/
+odoo/**/addons/theme_*/
+odoo/**/addons/hw_*/
+odoo/**/addons/test_*/

@@ -1,0 +1,33 @@
+---
+description: Odoo 19 XML view, menu, and security conventions
+globs: custom_addons/**/*.xml
+alwaysApply: false
+---
+
+# Odoo 19 XML
+
+```xml
+<!-- ❌ BAD -->
+<field name="view_mode">tree,form</field>
+<field name="arch" type="xml">
+    <tree><field name="name"/></tree>
+    <form>
+        <field name="name" attrs="{'invisible': [('x','=',True)]}"/>
+    </form>
+</field>
+
+<!-- ✅ GOOD -->
+<record id="view_sale_order_form_warranty" model="ir.ui.view">
+    <field name="name">sale.order.form.warranty</field>
+    <field name="model">sale.order</field>
+    <field name="inherit_id" ref="sale.view_order_form"/>
+    <field name="arch" type="xml">
+        <xpath expr="//field[@name='date_order']" position="after">
+            <field name="warranty_days" invisible="not partner_id"/>
+        </xpath>
+    </field>
+</record>
+```
+
+- `list` not `tree`. Use `invisible` / `readonly` / `required` expressions, not `attrs`.
+- Inherit with `inherit_id` + `xpath`. Resolve xml ids via Grep in the native module, not by guessing.

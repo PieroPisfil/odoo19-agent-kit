@@ -1,0 +1,35 @@
+services:
+    odoo19_1:
+        container_name: ${ODOO_HOST}
+        # image: odoo:19.0  <-- COMENTA O ELIMINA ESTA LÍNEA
+        build: .            # <-- AGREGA ESTO: Indica que use el Dockerfile de la carpeta actual
+        depends_on:
+            - postgres16_1
+        restart: unless-stopped
+        ports:
+            - ${ODOO_PORT}:8069
+            - "8072:8072"
+        volumes:
+            - odoo19-web-data:/var/lib/odoo
+            - ./restore_files:/mnt/restore_files
+            - ./addons:/mnt/extra-addons
+            - ./addons-third-party:/mnt/addons-third-party
+            - ./config:/etc/odoo
+    
+    postgres16_1:
+        container_name: ${POSTGRES_HOST}
+        image: postgres:${POSTGRES_VERSION}
+        restart: unless-stopped
+        environment:
+            - POSTGRES_DB=${POSTGRES_DB}
+            - POSTGRES_USER=${POSTGRES_USER}
+            - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+            - PGDATA=/var/lib/postgresql/data/pgdata
+        ports:
+            - ${POSTGRES_PORT}:5432
+        volumes:
+            - odoo19-db-data:/var/lib/postgresql/data/pgdata
+
+volumes:
+    odoo19-web-data:
+    odoo19-db-data:
