@@ -1,10 +1,10 @@
 # Module skeleton (Odoo 19)
 
-Place modules in `custom_addons/<technical_name>/` (lowercase, underscores).
+Place modules in `addons/<technical_name>/` (lowercase, underscores).
 
 ```
 <technical_name>/
-├── __init__.py
+├── __init__.py              # import models; define hooks here if needed
 ├── __manifest__.py
 ├── models/
 │   ├── __init__.py
@@ -13,10 +13,20 @@ Place modules in `custom_addons/<technical_name>/` (lowercase, underscores).
 │   └── <model>_views.xml
 ├── security/
 │   └── ir.model.access.csv
-└── data/                    # optional XML data
+├── data/                    # optional XML data (xmlids → clean uninstall)
+│   └── neutralize.sql       # only if secrets / live outbound APIs (not in manifest data)
+├── tests/
+│   ├── __init__.py
+│   └── test_*.py
+└── migrations/              # only when an upgrade must transform data/schema
+    └── 19.0.x.y.z/
+        ├── pre-migrate.py
+        └── post-migrate.py
 ```
 
 Add `controllers/` or `static/src/` only when needed. OWL: [owl.md](owl.md).
+
+Do not add `uninstall_hook`, `migrations/`, or `data/neutralize.sql` by default. Criteria: [uninstall-and-migration.md](uninstall-and-migration.md), [neutralize.md](neutralize.md).
 
 ## `__init__.py`
 
@@ -46,11 +56,14 @@ from . import sale_order
     ],
     "installable": True,
     "application": False,
+    # "uninstall_hook": "uninstall_hook",  # only if native leftovers need revert
 }
 ```
 
 - `depends` must include every native module you inherit (models, views, xml ids).
 - List XML/CSV in load order: security → data → views.
+- Put data in XML/CSV so uninstall can drop it via xmlid. Bump `version` and add `migrations/<target>/` when changing stored fields on an already shipped module.
+- `data/neutralize.sql` is auto-loaded on restore/duplicate `--neutralize`. Never list it in `data`.
 
 ## New model vs inherit
 

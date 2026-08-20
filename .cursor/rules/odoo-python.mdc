@@ -1,6 +1,6 @@
 ---
 description: Odoo 19 Python ORM conventions for custom modules
-globs: custom_addons/**/*.py
+globs: addons/**/*.py
 alwaysApply: false
 ---
 
@@ -10,7 +10,7 @@ alwaysApply: false
 # ❌ BAD — copy or patch core
 # (editing odoo/addons/sale/models/sale_order.py)
 
-# ✅ GOOD — extend in custom_addons
+# ✅ GOOD — extend in addons/
 from odoo import api, fields, models
 
 class SaleOrder(models.Model):

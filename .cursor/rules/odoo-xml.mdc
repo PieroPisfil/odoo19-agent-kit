@@ -1,6 +1,6 @@
 ---
 description: Odoo 19 XML view, menu, and security conventions
-globs: custom_addons/**/*.xml
+globs: addons/**/*.xml
 alwaysApply: false
 ---
 

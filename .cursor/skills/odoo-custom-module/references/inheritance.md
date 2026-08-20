@@ -15,7 +15,7 @@ class SaleOrder(models.Model):
     warranty_days = fields.Integer(string="Warranty (days)")
 ```
 
-Resolve `_inherit` / xml ids with `find_model.py` and Grep. Overrides must call `super()`.
+Resolve `_inherit` / xml ids with `find_model.py` and Grep. Overrides must call `super()`. Extra fields uninstall with the module. Renaming or changing the type of a stored field on a shipped module needs `migrations/` — [uninstall-and-migration.md](uninstall-and-migration.md). Extra stored secrets or prod flags on a native table need `data/neutralize.sql` — [neutralize.md](neutralize.md).
 
 ## Model: new (`_name`)
 

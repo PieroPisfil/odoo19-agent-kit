@@ -23,6 +23,16 @@ Tras crear un módulo: `scripts/install-module.ps1 -Module <nombre>` (primera ve
 2. Read only that class or method (line range / Grep). Do not `@` addon folders. Catalog `FILE` paths may start with `odoo/`; open the same path under `odoo-src/` (`odoo/addons/...` → `odoo-src/addons/...`, `odoo/odoo/addons/...` → `odoo-src/odoo/addons/...`).
 3. Prefer `_inherit` over copying native files. Never edit `odoo-src/`.
 
+## Uninstall, migrations, neutralize
+
+Before finishing a create or edit, apply `.cursor/skills/odoo-custom-module/references/uninstall-and-migration.md` and `neutralize.md`.
+
+- Put master data in XML/CSV (xmlids). Odoo already deletes those records and drops this module's tables/extra columns on uninstall.
+- `uninstall_hook(env)` only to revert writes to native records / `ir.config_parameter` / `create()` without xmlids, or to raise `UserError` and block uninstall. If the hook exists, test by calling it (not `button_uninstall` in `TransactionCase`).
+- If the module may already be installed and you rename or change the type of a stored field: bump `__manifest__.py` `version` (`19.0.x.y.z`) and add `migrations/<target>/pre-migrate.py` with `def migrate(cr, version)`. Selection-key or data backfills go in `post-migrate.py`.
+- If the module stores secrets or can call live services after restoring a production dump locally, add `data/neutralize.sql` (auto-loaded; do not list it in manifest `data`). `base` already disables mail servers, crons, and webhooks.
+- New xmlid-only modules with no outbound APIs do not need a hook, `migrations/`, or `neutralize.sql`; still record that decision.
+
 ## After updating `odoo-src/`
 
 ```bash
