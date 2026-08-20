@@ -10,4 +10,5 @@ alwaysApply: true
 - Before coding, run `python .cursor/skills/odoo-custom-module/scripts/find_model.py <model>` and read that class only.
 - Do not `@` folders under `odoo-src/addons`. Use Grep or `find_model.py`. Catalog `FILE` paths may start with `odoo/`; open them under `odoo-src/`.
 - Manifest version prefix: `19.0`. View mode: `list,form` (not `tree`).
+- Uninstall/migration/neutralize: xmlid data uninstalls itself; leftover native writes need `uninstall_hook(env)`. Stored field rename/type change on a shipped module needs `migrations/<ver>/pre-migrate.py`. Secrets or live APIs need `data/neutralize.sql` (not in manifest `data`). See skill references `uninstall-and-migration.md` and `neutralize.md`.
 - `--addons-path` (clone lookup): `odoo-src/addons` and `odoo-src/odoo/addons`. Runtime: `scripts/up.ps1` → http://localhost:8070 (service `odoo19_1`, DB `dev`). `addons/` → `/mnt/extra-addons`.

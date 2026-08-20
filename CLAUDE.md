@@ -75,6 +75,17 @@ respuestas. Trae solo lo que necesitas para la tarea actual.
 - Antes de dar una tarea por terminada: instala/actualiza el módulo y corre
   sus tests contra el Odoo de desarrollo (ver abajo). No declares éxito solo
   porque el código "se ve correcto".
+- Antes de terminar un alta o un cambio de módulo, aplica los criterios de
+  desinstalación, migración y neutralize (skill
+  `.cursor/skills/odoo-custom-module/references/uninstall-and-migration.md` y
+  `neutralize.md`). Los xmlids y los campos extra del módulo los limpia Odoo.
+  Un `uninstall_hook(env)` solo revierte residuos en registros nativos / ICP /
+  `create()` sin xmlid, o bloquea la desinstalación. Si el módulo ya puede
+  estar instalado y renombras o cambias el tipo de un campo stored: sube
+  `version` (`19.0.x.y.z`) y añade `migrations/<version>/pre-migrate.py` con
+  `def migrate(cr, version)`. Si el módulo guarda secretos o puede pegarle a
+  APIs reales al restaurar un dump de producción en local: crea
+  `data/neutralize.sql` (no lo listes en `data` del manifiesto).
 
 ## Ciclo de desarrollo (Docker local)
 
@@ -148,11 +159,22 @@ addons/<nombre_modulo>/
 │   ├── ir.model.access.csv
 │   └── security.xml        (si hace falta record rules o grupos)
 ├── data/                    (datos iniciales, si aplica)
+│   └── neutralize.sql       (solo si hay secretos o APIs en vivo; no va en el manifiesto)
 ├── wizard/                  (TransientModel, si aplica)
-└── tests/
-    ├── __init__.py
-    └── test_*.py
+├── tests/
+│   ├── __init__.py
+│   └── test_*.py
+└── migrations/              (solo si un upgrade debe transformar datos/esquema)
+    └── 19.0.x.y.z/
+        ├── pre-migrate.py
+        └── post-migrate.py
 ```
+
+No añadas `uninstall_hook`, `migrations/` ni `data/neutralize.sql` por
+defecto. Datos en XML/CSV (con xmlid) se desinstalan solos. El hook va en
+`__init__.py` y se declara en `__manifest__.py` solo si hay residuos nativos
+que revertir. `neutralize.sql` lo carga Odoo al restaurar/duplicar con
+`--neutralize`; no lo pongas en la lista `data` del manifiesto.
 
 ## Notas de versión
 

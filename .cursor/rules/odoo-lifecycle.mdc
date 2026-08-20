@@ -1,0 +1,17 @@
+---
+description: Uninstall hooks, version-upgrade migrations, and neutralize.sql for custom Odoo 19 modules
+globs: addons/**/*.py,addons/**/data/neutralize.sql
+alwaysApply: false
+---
+
+# Uninstall, migrations, neutralize
+
+Odoo already drops this module's xmlid records, `_name` tables, and extra `_inherit` columns. Do not add `uninstall_hook` for that.
+
+`uninstall_hook(env)` only to revert native records / ICP / `create()` leftovers, or to raise `UserError` and block uninstall. Test by calling the hook; do not `button_uninstall` in `TransactionCase`.
+
+Rename or change type of a **stored** field on a module that may already be installed: bump `__manifest__.py` `version` (`19.0.x.y.z`) and add `migrations/<target>/pre-migrate.py` with `def migrate(cr, version):` (SQL rename/copy **before** ORM creates an empty column). Selection-key or backfill work goes in `post-migrate.py`.
+
+Secrets, live API tokens, prod flags, or custom outbound connectors: add `data/neutralize.sql` (idempotent SQL). Do **not** list it in manifest `data`. Skip the file if the module has no outbound side effect. `base` already disables mail servers, crons, and webhooks.
+
+Details: `.cursor/skills/odoo-custom-module/references/uninstall-and-migration.md` and `neutralize.md`
